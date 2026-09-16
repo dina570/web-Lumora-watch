@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMORA Heritage — Product — LUMORA Watch</title>
+  <meta name="description" content="LUMORA Heritage, jam tangan klasik dengan tali kulit premium. Lihat spesifikasi, fitur, dan harga.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#konten-utama" class="skip-link">Langsung ke konten utama</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo">
+        LUMORA <span class="logo__accent">Watch</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <ul class="main-nav__list" id="mainNavList">
+          <li><a href="index.html" class="main-nav__link">Home</a></li>
+          <li><a href="collections.html" class="main-nav__link">Collections</a></li>
+          <li><a href="product.html" class="main-nav__link is-active">Product</a></li>
+          <li><a href="about.html" class="main-nav__link">About</a></li>
+          <li><a href="contact.html" class="main-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mainNavList"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="konten-utama">
+
+    <nav class="breadcrumb" aria-label="Jejak navigasi">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li aria-current="page">LUMORA Heritage</li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="product-detail" aria-labelledby="product-title">
+      <div class="container product-detail__grid">
+
+        <div class="product-detail__gallery">
+          <img
+            src="assets/images/heritage.svg"
+            alt="LUMORA Heritage, jam tangan klasik dengan tali kulit cokelat dan dial putih"
+            class="product-detail__main-img"
+          >
+        </div>
+
+        <div class="product-detail__info">
+          <p class="product-detail__category">Classic Watch</p>
+          <h1 id="product-title" class="product-detail__title">LUMORA Heritage</h1>
+          <p class="product-detail__price">Rp 2.450.000</p>
+
+          <p class="product-detail__desc">
+            LUMORA Heritage lahir dari kecintaan pada desain klasik yang tidak lekang oleh waktu.
+            Dial putih bersih berpadu dengan tali kulit cokelat premium, cocok untuk gaya kerja
+            maupun santai. Dibuat untuk mereka yang menghargai detail dan kesederhanaan.
+          </p>
+
+          <button type="button" class="btn btn--primary product-detail__order" id="openOrderModal">
+            Order Now
+          </button>
+
+          <div class="product-detail__block">
+            <h2>Spesifikasi</h2>
+            <table class="spec-table">
+              <tbody>
+                <tr>
+                  <th scope="row">Diameter Case</th>
+                  <td>40 mm</td>
+                </tr>
+                <tr>
+                  <th scope="row">Material</th>
+                  <td>Case stainless steel, kaca mineral anti gores</td>
+                </tr>
+                <tr>
+                  <th scope="row">Warna</th>
+                  <td>Dial putih, aksen brass gold</td>
+                </tr>
+                <tr>
+                  <th scope="row">Jenis Strap</th>
+                  <td>Kulit asli, warna cokelat</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mesin</th>
+                  <td>Quartz</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ketahanan Air</th>
+                  <td>3 ATM (percikan air &amp; hujan ringan)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Garansi</th>
+                  <td>1 tahun garansi resmi LUMORA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="product-detail__block">
+            <h2>Fitur</h2>
+            <ul class="feature-list">
+              <li>Kaca mineral anti gores</li>
+              <li>Jarum &amp; indeks dengan lapisan luminous</li>
+              <li>Buckle kulit dengan finishing jahitan tangan</li>
+              <li>Desain tipis, nyaman dipakai seharian</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal-overlay" id="orderModalOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+      <button type="button" class="modal__close" id="orderModalClose" aria-label="Tutup form pemesanan">&times;</button>
+
+      <h2 id="orderModalTitle">Form Pemesanan</h2>
+      <p class="modal__product-name">LUMORA Heritage</p>
+
+      <form class="modal__form" id="orderForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="orderName">Nama</label>
+          <input class="form-input" type="text" id="orderName" name="orderName" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderWhatsapp">Nomor WhatsApp</label>
+          <input class="form-input" type="tel" id="orderWhatsapp" name="orderWhatsapp" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderProduct">Produk</label>
+          <input class="form-input" type="text" id="orderProduct" name="orderProduct" value="LUMORA Heritage" readonly>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="orderQuantity">Jumlah</label>
+          <input class="form-input" type="number" id="orderQuantity" name="orderQuantity" min="1" value="1" required>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Kirim Pesanan</button>
+      </form>
+
+      <p class="form-note" id="orderFormMessage" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <p class="logo">LUMORA <span class="logo__accent">Watch</span></p>
+        <p class="footer__tagline">Time, Refined.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navigasi footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram LUMORA Watch">Instagram</a>
+        <a href="#" aria-label="TikTok LUMORA Watch">TikTok</a>
+        <a href="#" aria-label="Email LUMORA Watch">Email</a>
+      </div>
+
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; 2026 LUMORA Watch. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

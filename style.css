@@ -1,0 +1,1085 @@
+/* =========================================================
+   LUMORA WATCH — style.css
+   Dipakai bersama oleh: index, collections, product, about, contact
+   ========================================================= */
+
+/* ---------- 1. RESET DASAR ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--ink);
+  background-color: var(--paper);
+  line-height: 1.6;
+  overflow-x: hidden; /* jaga-jaga supaya tidak ada scroll horizontal */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ---------- 2. DESAIN TOKEN (WARNA, FONT, SPACING) ---------- */
+:root {
+  /* Warna */
+  --ink: #1A1815;         /* teks utama, hampir hitam tapi hangat */
+  --ink-soft: #4A463F;    /* teks sekunder */
+  --steel: #7A756B;       /* teks tersier / caption */
+  --paper: #F6F3EC;       /* latar utama, ivory hangat */
+  --paper-dark: #1E1C18;  /* latar gelap untuk header/footer */
+  --paper-alt: #EFEAE0;   /* latar section selang-seling */
+  --brass: #A8823E;       /* aksen utama, warna kuningan jam tangan */
+  --brass-light: #EFE3C8; /* aksen lembut untuk hover/background */
+  --line: #DED7C9;        /* garis tipis / border */
+  --line-dark: #38352E;   /* garis tipis di atas latar gelap */
+
+  /* Tipografi */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Spacing & layout */
+  --container-width: 1200px;
+  --radius: 2px;
+}
+
+/* ---------- 3. TIPOGRAFI ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw + 1rem, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--ink-soft);
+  max-width: 65ch;
+}
+
+/* ---------- 4. UTILITAS ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.section-heading {
+  max-width: 40rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-heading p {
+  color: var(--steel);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- 5. TOMBOL ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn--primary {
+  background-color: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background-color: var(--brass);
+  border-color: var(--brass);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* ---------- 6. HEADER & NAVBAR ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.1rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.logo__accent {
+  color: var(--brass);
+  font-weight: 500;
+}
+
+.main-nav__list {
+  display: none;
+  gap: 2rem;
+}
+
+.main-nav__link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus-visible {
+  color: var(--ink);
+}
+
+.main-nav__link.is-active {
+  color: var(--ink);
+  border-bottom-color: var(--brass);
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--ink);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Menu mobile terbuka: script.js menambahkan class "is-open" pada #mainNavList */
+.main-nav__list.is-open {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 1.25rem 1.25rem;
+}
+
+.main-nav__list.is-open .main-nav__link {
+  display: block;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Ikon hamburger berubah jadi "X" saat menu terbuka (class dari script.js) */
+.nav-toggle.is-active .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-active .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- 7. HERO (index.html) ---------- */
+.hero {
+  padding-block: clamp(3.5rem, 8vw, 7rem);
+  background-color: var(--paper-dark);
+  color: var(--paper);
+}
+
+.hero__content {
+  max-width: 42rem;
+}
+
+.hero__eyebrow {
+  color: var(--brass);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hero__title {
+  color: var(--paper);
+  margin-bottom: 1rem;
+}
+
+.hero__desc {
+  color: #D8D3C6;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero .btn--primary {
+  background-color: var(--brass);
+  border-color: var(--brass);
+  color: var(--paper-dark);
+}
+
+.hero .btn--primary:hover,
+.hero .btn--primary:focus-visible {
+  background-color: var(--paper);
+  border-color: var(--paper);
+}
+
+.hero .btn--ghost {
+  color: var(--paper);
+  border-color: #55503F;
+}
+
+.hero .btn--ghost:hover,
+.hero .btn--ghost:focus-visible {
+  background-color: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+/* ---------- 8. PAGE HEADER (collections, about, contact) ---------- */
+.page-header {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) 1rem;
+}
+
+.page-header__eyebrow {
+  color: var(--brass);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.page-header__desc {
+  margin-top: 0.75rem;
+}
+
+/* ---------- 9. KOLEKSI PREVIEW (index.html) ---------- */
+.collections-preview {
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.collections-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: 1fr;
+}
+
+.collection-card {
+  border: 1px solid var(--line);
+  padding-bottom: 1.5rem;
+  background-color: var(--paper);
+}
+
+.collection-card__img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.collection-card__title {
+  padding-inline: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.collection-card__desc {
+  padding-inline: 1.25rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.collection-card__link {
+  display: inline-block;
+  margin-inline: 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--brass);
+}
+
+/* ---------- 10. BRAND STORY (index.html, about.html) ---------- */
+.brand-story {
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+  background-color: var(--paper-alt);
+}
+
+.brand-story__inner {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.brand-story__text p {
+  margin-bottom: 1rem;
+}
+
+.brand-story__text p:last-child {
+  margin-bottom: 0;
+}
+
+.link-underline {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--brass);
+}
+
+.brand-story__image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ---------- 11. NEWSLETTER (index.html) ---------- */
+.newsletter {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background-color: var(--paper-dark);
+  color: var(--paper);
+  text-align: center;
+}
+
+.newsletter__inner {
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
+.newsletter h2 {
+  color: var(--paper);
+  margin-bottom: 0.5rem;
+}
+
+.newsletter p {
+  color: #D8D3C6;
+  margin-inline: auto;
+  margin-bottom: 1.75rem;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.newsletter__input {
+  padding: 0.85rem 1rem;
+  border: 1px solid #55503F;
+  background-color: transparent;
+  color: var(--paper);
+  font-family: var(--font-body);
+}
+
+.newsletter__input::placeholder {
+  color: #B7B1A0;
+}
+
+.newsletter__note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--brass);
+  min-height: 1.2em;
+}
+
+/* ---------- 12. FILTER PRODUK & GRID (collections.html) ---------- */
+.collections-page {
+  padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 6vw, 5.5rem);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--line);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.filter-btn.is-active {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.product-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: 1fr;
+}
+
+.product-card {
+  border: 1px solid var(--line);
+  background-color: var(--paper);
+  padding-bottom: 1.5rem;
+}
+
+.product-card__img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.product-card__category {
+  padding-inline: 1.25rem;
+  font-size: 0.8rem;
+  color: var(--brass);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.product-card__title {
+  padding-inline: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.product-card__price {
+  padding-inline: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.product-card__link {
+  display: inline-block;
+  margin-inline: 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--brass);
+}
+
+.product-grid__empty {
+  text-align: center;
+  padding-block: 3rem;
+  color: var(--steel);
+}
+
+/* ---------- 13. BREADCRUMB (product.html) ---------- */
+.breadcrumb {
+  padding-top: 1.5rem;
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--steel);
+}
+
+.breadcrumb__list li:not(:last-child)::after {
+  content: '/';
+  margin-left: 0.4rem;
+  color: var(--line);
+}
+
+.breadcrumb__list a {
+  color: var(--steel);
+}
+
+.breadcrumb__list a:hover,
+.breadcrumb__list a:focus-visible {
+  color: var(--ink);
+}
+
+.breadcrumb__list li[aria-current='page'] {
+  color: var(--ink);
+}
+
+/* ---------- 14. DETAIL PRODUK (product.html) ---------- */
+.product-detail {
+  padding-block: clamp(2rem, 5vw, 4rem) clamp(3.5rem, 7vw, 6rem);
+}
+
+.product-detail__grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.product-detail__main-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.product-detail__category {
+  color: var(--brass);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.product-detail__title {
+  margin-bottom: 0.5rem;
+}
+
+.product-detail__price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.product-detail__desc {
+  margin-bottom: 1.75rem;
+}
+
+.product-detail__order {
+  margin-bottom: 2.5rem;
+}
+
+.product-detail__block {
+  margin-top: 2.25rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.product-detail__block h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.spec-table th,
+.spec-table td {
+  text-align: left;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.spec-table th {
+  color: var(--steel);
+  font-weight: 500;
+  width: 40%;
+}
+
+.spec-table td {
+  color: var(--ink);
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: var(--ink-soft);
+}
+
+.feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background-color: var(--brass);
+}
+
+/* ---------- 15. VISI, MISI & NILAI (about.html) ---------- */
+.vision-mission {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.vision-mission__grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.vision-mission__card {
+  border: 1px solid var(--line);
+  padding: 1.75rem;
+}
+
+.vision-mission__card h3 {
+  margin-bottom: 0.85rem;
+  color: var(--brass);
+}
+
+.vision-mission__card ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: var(--ink-soft);
+}
+
+.vision-mission__card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background-color: var(--brass);
+}
+
+.brand-values {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background-color: var(--paper-alt);
+}
+
+.values-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.value-card {
+  padding: 1.75rem;
+  background-color: var(--paper);
+  border-top: 2px solid var(--brass);
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.why-us {
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.why-us__list {
+  max-width: 42rem;
+  margin-top: 1.5rem;
+}
+
+.why-us__list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.why-us__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background-color: var(--brass);
+}
+
+/* ---------- 16. KONTAK (contact.html) ---------- */
+.contact-section {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3.5rem, 7vw, 6rem);
+}
+
+.contact-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.contact-info__item {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info__item h3 {
+  font-size: 1rem;
+  color: var(--brass);
+  margin-bottom: 0.35rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  background-color: var(--paper);
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  border-color: var(--brass);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: var(--brass);
+  min-height: 1.2em;
+}
+
+/* ---------- 17. FOOTER (semua halaman) ---------- */
+.site-footer {
+  background-color: var(--paper-dark);
+  color: #C9C4B6;
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.footer__inner {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.footer__brand .logo {
+  color: var(--paper);
+}
+
+.footer__tagline {
+  margin-top: 0.4rem;
+  color: #A39D8C;
+  font-size: 0.9rem;
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer__nav a:hover,
+.footer__nav a:focus-visible,
+.footer__social a:hover,
+.footer__social a:focus-visible {
+  color: var(--brass);
+}
+
+.footer__social {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer__bottom {
+  padding-block: 1.25rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #948E7C;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET (>= 700px)
+   ========================================================= */
+@media (min-width: 700px) {
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vision-mission__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1.3fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — DESKTOP (>= 1024px)
+   ========================================================= */
+@media (min-width: 1024px) {
+  .main-nav__list {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .main-nav__list.is-open {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    border-bottom: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  .main-nav__list.is-open .main-nav__link {
+    padding-block: 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .main-nav__list.is-open .main-nav__link.is-active {
+    border-bottom-color: var(--brass);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .collections-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .brand-story__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brand-story__image {
+    order: 2;
+  }
+
+  .newsletter__form {
+    flex-direction: row;
+  }
+
+  .newsletter__input {
+    flex: 1;
+  }
+
+  .product-detail__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* =========================================================
+   18. TAMBAHAN — Cerita singkat (about.html) tanpa gambar
+   ========================================================= */
+.story-intro {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.story-intro__inner {
+  max-width: 42rem;
+}
+
+.story-intro__inner p {
+  margin-top: 1rem;
+}
+
+/* ---------- 19. INFO KONTAK (contact.html) ---------- */
+.contact-info__item a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--brass);
+}
+
+.contact-info__item a:hover,
+.contact-info__item a:focus-visible {
+  color: var(--brass);
+}
+
+/* ---------- 20. MODAL FORM PEMESANAN (product.html) ---------- */
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(26, 24, 21, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 200;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 26rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--paper);
+  padding: 2rem 1.75rem;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--ink-soft);
+}
+
+.modal__close:hover,
+.modal__close:focus-visible {
+  color: var(--brass);
+}
+
+.modal__product-name {
+  color: var(--brass);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* ---------- 21. ANIMASI SEDERHANA UNTUK FILTER PRODUK ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card.is-visible {
+  animation: fadeIn 0.35s ease;
+}

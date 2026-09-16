@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — LUMORA Watch</title>
+  <meta name="description" content="Hubungi LUMORA Watch untuk pertanyaan produk, pemesanan, atau kerja sama.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#konten-utama" class="skip-link">Langsung ke konten utama</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo">
+        LUMORA <span class="logo__accent">Watch</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <ul class="main-nav__list" id="mainNavList">
+          <li><a href="index.html" class="main-nav__link">Home</a></li>
+          <li><a href="collections.html" class="main-nav__link">Collections</a></li>
+          <li><a href="product.html" class="main-nav__link">Product</a></li>
+          <li><a href="about.html" class="main-nav__link">About</a></li>
+          <li><a href="contact.html" class="main-nav__link is-active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mainNavList"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="konten-utama">
+
+    <section class="page-header" aria-labelledby="page-title">
+      <div class="container">
+        <p class="page-header__eyebrow">Contact</p>
+        <h1 id="page-title">Hubungi LUMORA</h1>
+        <p class="page-header__desc">
+          Ada pertanyaan soal produk, pemesanan, atau ingin kerja sama dengan LUMORA Watch?
+          Isi form di bawah atau hubungi kami lewat kanal berikut.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-form-title">
+      <div class="container contact-grid">
+
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <h3>Email</h3>
+            <p><a href="mailto:hello@lumorawatch.com">hello@lumorawatch.com</a></p>
+          </div>
+
+          <div class="contact-info__item">
+            <h3>Instagram</h3>
+            <p><a href="https://instagram.com/lumorawatch" target="_blank" rel="noopener noreferrer">@lumorawatch</a></p>
+          </div>
+
+          <div class="contact-info__item">
+            <h3>TikTok</h3>
+            <p><a href="https://tiktok.com/@lumorawatch" target="_blank" rel="noopener noreferrer">@lumorawatch</a></p>
+          </div>
+
+          <div class="contact-info__item">
+            <h3>Jam Layanan</h3>
+            <p>Senin – Sabtu, 09.00 – 18.00 WIB</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate aria-labelledby="contact-form-title">
+          <h2 id="contact-form-title" class="visually-hidden">Form Kontak</h2>
+
+          <div class="form-group">
+            <label class="form-label" for="contactName">Nama</label>
+            <input class="form-input" type="text" id="contactName" name="contactName" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactEmail">Email</label>
+            <input class="form-input" type="email" id="contactEmail" name="contactEmail" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactWhatsapp">Nomor WhatsApp</label>
+            <input class="form-input" type="tel" id="contactWhatsapp" name="contactWhatsapp" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactSubject">Subjek</label>
+            <input class="form-input" type="text" id="contactSubject" name="contactSubject" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactMessage">Pesan</label>
+            <textarea class="form-textarea" id="contactMessage" name="contactMessage" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Kirim Pesan</button>
+
+          <p class="form-note" id="contactFormMessage" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <p class="logo">LUMORA <span class="logo__accent">Watch</span></p>
+        <p class="footer__tagline">Time, Refined.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navigasi footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram LUMORA Watch">Instagram</a>
+        <a href="#" aria-label="TikTok LUMORA Watch">TikTok</a>
+        <a href="#" aria-label="Email LUMORA Watch">Email</a>
+      </div>
+
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; 2026 LUMORA Watch. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

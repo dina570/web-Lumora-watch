@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collections — LUMORA Watch</title>
+  <meta name="description" content="Jelajahi koleksi LUMORA Watch: Classic Watch dan Smartwatch dengan desain modern, elegan, dan minimalis.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#konten-utama" class="skip-link">Langsung ke konten utama</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+
+      <a href="index.html" class="logo">
+        LUMORA <span class="logo__accent">Watch</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <ul class="main-nav__list" id="mainNavList">
+          <li><a href="index.html" class="main-nav__link">Home</a></li>
+          <li><a href="collections.html" class="main-nav__link is-active">Collections</a></li>
+          <li><a href="product.html" class="main-nav__link">Product</a></li>
+          <li><a href="about.html" class="main-nav__link">About</a></li>
+          <li><a href="contact.html" class="main-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mainNavList"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="konten-utama">
+
+    <section class="page-header" aria-labelledby="page-title">
+      <div class="container">
+        <p class="page-header__eyebrow">Katalog LUMORA</p>
+        <h1 id="page-title">Collections</h1>
+        <p class="page-header__desc">
+          Dua karakter, satu filosofi: kesederhanaan yang berkelas. Pilih kategori
+          untuk melihat koleksi Classic Watch atau Smartwatch dari LUMORA.
+        </p>
+      </div>
+    </section>
+
+    <section class="collections-page" aria-labelledby="products-title">
+      <div class="container">
+
+        <h2 class="visually-hidden" id="products-title">Daftar Produk</h2>
+
+        <div class="filter-bar" role="group" aria-label="Filter produk berdasarkan kategori">
+          <button type="button" class="filter-btn is-active" data-filter="all">Semua</button>
+          <button type="button" class="filter-btn" data-filter="classic">Classic Watch</button>
+          <button type="button" class="filter-btn" data-filter="smart">Smartwatch</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+          <article class="product-card" data-category="classic">
+            <img src="assets/images/heritage.svg" alt="LUMORA Heritage, jam tangan tali kulit cokelat" class="product-card__img">
+            <p class="product-card__category">Classic Watch</p>
+            <h3 class="product-card__title">LUMORA Heritage</h3>
+            <p class="product-card__price">Rp 2.450.000</p>
+            <a href="product.html" class="product-card__link">Lihat Detail</a>
+          </article>
+
+          <article class="product-card" data-category="classic">
+            <img src="assets/images/noir.svg" alt="LUMORA Noir, jam tangan case dan dial hitam" class="product-card__img">
+            <p class="product-card__category">Classic Watch</p>
+            <h3 class="product-card__title">LUMORA Noir</h3>
+            <p class="product-card__price">Rp 2.850.000</p>
+            <a href="product.html" class="product-card__link">Lihat Detail</a>
+          </article>
+
+          <article class="product-card" data-category="classic">
+            <img src="assets/images/ivory.svg" alt="LUMORA Ivory, jam tangan tali bracelet metal" class="product-card__img">
+            <p class="product-card__category">Classic Watch</p>
+            <h3 class="product-card__title">LUMORA Ivory</h3>
+            <p class="product-card__price">Rp 3.100.000</p>
+            <a href="product.html" class="product-card__link">Lihat Detail</a>
+          </article>
+
+          <article class="product-card" data-category="smart">
+            <img src="assets/images/pulse.svg" alt="LUMORA Pulse, smartwatch dengan layar digital" class="product-card__img">
+            <p class="product-card__category">Smartwatch</p>
+            <h3 class="product-card__title">LUMORA Pulse</h3>
+            <p class="product-card__price">Rp 2.950.000</p>
+            <a href="product.html" class="product-card__link">Lihat Detail</a>
+          </article>
+
+          <article class="product-card" data-category="smart">
+            <img src="assets/images/aria.svg" alt="LUMORA Aria, smartwatch tali silikon krem" class="product-card__img">
+            <p class="product-card__category">Smartwatch</p>
+            <h3 class="product-card__title">LUMORA Aria</h3>
+            <p class="product-card__price">Rp 3.250.000</p>
+            <a href="product.html" class="product-card__link">Lihat Detail</a>
+          </article>
+
+          <article class="product-card" data-category="smart">
+            <img src="assets/images/orbit.svg" alt="LUMORA Orbit, smartwatch case titanium" class="product-card__img">
+            <p class="product-card__category">Smartwatch</p>
+            <h3 class="product-card__title">LUMORA Orbit</h3>
+            <p class="product-card__price">Rp 3.450.000</p>
+            <a href="product.html" class="product-card__link">Lihat Detail</a>
+          </article>
+
+        </div>
+
+        <p class="product-grid__empty" id="productEmptyMessage" hidden>
+          Belum ada produk pada kategori ini.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <p class="logo">LUMORA <span class="logo__accent">Watch</span></p>
+        <p class="footer__tagline">Time, Refined.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navigasi footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram LUMORA Watch">Instagram</a>
+        <a href="#" aria-label="TikTok LUMORA Watch">TikTok</a>
+        <a href="#" aria-label="Email LUMORA Watch">Email</a>
+      </div>
+
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; 2026 LUMORA Watch. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
